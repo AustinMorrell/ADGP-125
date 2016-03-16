@@ -1,0 +1,10 @@
+c:\users\austin.morrell\documents\visual studio 2015\Projects\RPG\RPG\bin\Debug\RPG.exe.config
+C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Debug\RPG.exe.config
+C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Debug\RPG.exe
+C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Debug\RPG.pdb
+C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\obj\Debug\RPG.csprojResolveAssemblyReference.cache
+C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\obj\Debug\RPG.Properties.Resources.resources
+C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\obj\Debug\RPG.csproj.GenerateResource.Cache
+C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\obj\Debug\RPG.exe
+C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\obj\Debug\RPG.pdb
+C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\obj\Debug\RPG.ADGP125.resources
