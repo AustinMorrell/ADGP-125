@@ -20,6 +20,11 @@ namespace Combat_Program
             get; set;
         }
 
+        float maxHP
+        {
+            get; set;
+        }
+
         float HP
         {
             get; set;

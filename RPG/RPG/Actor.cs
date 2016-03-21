@@ -8,8 +8,10 @@ using RPG;
 namespace Combat_Program
 {
     // Object's abilites and attacks in battle. //
-    class Actor : ICanTakeActions, ICanAttack
+    public class Actor : ICanTakeActions, ICanAttack
     {
+        protected string m_Name;
+        protected float m_maxHP;
         protected float m_HP;
         protected float m_Attack;
         protected float m_Defence;
@@ -64,6 +66,19 @@ namespace Combat_Program
             set
             {
                 m_Status = value;
+            }
+        }
+
+        public float maxHP
+        {
+            get
+            {
+                return m_maxHP;
+            }
+
+            set
+            {
+                m_maxHP = value;
             }
         }
 

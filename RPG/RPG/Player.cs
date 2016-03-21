@@ -8,7 +8,8 @@ using Leveling_System;
 namespace Combat_Program
 {
     // Object is the representation of the user. //
-    class Player : Actor, IControllable, ILevelable
+    [Serializable]
+    public class Player : Actor, IControllable, ILevelable
     {
         private string m_Input;
         List<double> m_Curve = new List<double>();
@@ -16,6 +17,19 @@ namespace Combat_Program
         private int m_maxLevel = 100;
         private int m_maxEXP = 0;
         private double m_EXP = 0;
+
+        public string Name
+        {
+            get
+            {
+                return m_Name;
+            }
+
+            set
+            {
+                m_Name = value;
+            }
+        }
 
         public string Input
         {
@@ -117,12 +131,16 @@ namespace Combat_Program
             }
         }
 
-        public Player(float a, float b, float c, string d)
+        public Player(string e, float a, float b, float c, string d)
         {
-            m_HP = a;
+            m_Name = e;
+            m_maxHP = a;
             m_Attack = b;
             m_Defence = c;
             m_Status = d;
         }
+
+        public Player()
+        {}
     }
 }
