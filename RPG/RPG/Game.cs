@@ -9,6 +9,7 @@ using Combat_Program;
 
 namespace RPG
 {
+    [Serializable]
     class Game
     {
         public FSM fsm = new FSM(FSM.MyState.init.ToString());
@@ -33,7 +34,7 @@ namespace RPG
 
             while (true)
             {
-                Application.Run(new ADGP125());
+                //Application.Run(new ADGP125());
                 switch (fsm._currentState)
                 {
                     case "init":

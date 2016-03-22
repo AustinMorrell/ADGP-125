@@ -33,19 +33,39 @@ namespace RPG
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // I make the path to the file.
             var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\SaveData.xml";
+            // Make the file.
             System.IO.FileStream file = System.IO.File.Create(path);
-            foreach (Player a in game.Party)
-            {
-                XmlSerializer writer = new XmlSerializer(a.GetType());
-                writer.Serialize(file, a);
-            }
+            // Write to the file.
+            XmlSerializer writer = new XmlSerializer(game.Party.GetType());
+            writer.Serialize(file, game.Party);
+            // And then close the file.
             file.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            // I make the path to the file.
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\SaveData.xml";
+            // Make the deserializer.
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Player>));
+            // Make the reader for the file.
+            System.IO.StreamReader reader = new System.IO.StreamReader(path);
+            // Read and deserialize the file.
+            game.Party = (List<Player>)serializer.Deserialize(reader);
+            // Close the reader.
+            reader.Close();
+        }
+
+        private void PartyBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EnemyBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

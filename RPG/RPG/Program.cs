@@ -17,7 +17,7 @@ namespace RPG
             Game TheGame = new Game();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new ADGP125());
+            Application.Run(new ADGP125());
             TheGame.GameLoop();
         }
     }
