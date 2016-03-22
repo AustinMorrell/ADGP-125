@@ -14,11 +14,9 @@ namespace RPG
         [STAThread]
         static void Main()
         {
-            Game TheGame = new Game();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ADGP125());
-            TheGame.GameLoop();
         }
     }
 }

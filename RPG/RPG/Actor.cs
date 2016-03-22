@@ -10,12 +10,14 @@ namespace Combat_Program
     // Object's abilites and attacks in battle. //
     public class Actor : ICanTakeActions, ICanAttack
     {
+        protected int m_Level;
         protected string m_Name;
         protected float m_maxHP;
         protected float m_HP;
         protected float m_Attack;
         protected float m_Defence;
         protected string m_Status;
+        protected string m_Image;
 
         public float AttackP
         {

@@ -69,7 +69,7 @@ namespace FSM_Program
             Console.WriteLine("State: " + _currentState);
         }
 
-        public void ChangeState(string delta)
+        public bool ChangeState(string delta)
         {
             switch (delta)
             {
@@ -77,6 +77,7 @@ namespace FSM_Program
                     if (TransitionTable[_currentState].Contains(To_running) || TransitionTable[_currentState].Contains(To_running2) || TransitionTable[_currentState].Contains(To_running3))
                     {
                         _currentState = "running";
+                        return true;
                     }
                     break;
 
@@ -84,6 +85,7 @@ namespace FSM_Program
                     if (TransitionTable[_currentState].Contains(To_pause) || TransitionTable[_currentState].Contains(To_pause))
                     {
                         _currentState = "pause";
+                        return true;
                     }
                     break;
 
@@ -91,9 +93,11 @@ namespace FSM_Program
                     if (TransitionTable[_currentState].Contains(To_battle) || TransitionTable[_currentState].Contains(To_battle2))
                     {
                         _currentState = "battle";
+                        return true;
                     }
                     break;
             }
+            return false;
         }
     }
 }

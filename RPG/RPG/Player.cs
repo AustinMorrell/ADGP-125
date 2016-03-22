@@ -13,7 +13,6 @@ namespace Combat_Program
     {
         private string m_Input;
         List<double> m_Curve = new List<double>();
-        private int m_Level = 1;
         private int m_maxLevel = 100;
         private int m_maxEXP = 0;
         private double m_EXP = 0;
@@ -109,6 +108,19 @@ namespace Combat_Program
             }
         }
 
+        public string Image
+        {
+            get
+            {
+                return m_Image;
+            }
+
+            set
+            {
+                m_Image = value;
+            }
+        }
+
         public void LevelCurve()
         {
             double TempEXPNumber = 0;
@@ -131,13 +143,15 @@ namespace Combat_Program
             }
         }
 
-        public Player(string e, float a, float b, float c, string d)
+        public Player(string e, float a, float b, float c, string d, string f)
         {
             m_Name = e;
             m_maxHP = a;
             m_Attack = b;
             m_Defence = c;
             m_Status = d;
+            m_Level = 1;
+            m_Image = f;
         }
 
         public Player()

@@ -14,9 +14,9 @@ namespace RPG
     {
         public FSM fsm = new FSM(FSM.MyState.init.ToString());
         public List<Player> Party = new List<Player>();
-        private Player M1 = new Player("Cloud", 100, 20, 5, "");
-        private Player M2 = new Player("Shadow", 100, 20, 5, "");
-        private Player M3 = new Player("Ben Odom", 100, 20, 5, "");
+        private Player M1 = new Player("Cloud", 100, 20, 5, "", @"C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Images\Cloud.gif");
+        private Player M2 = new Player("Shadow", 100, 20, 5, "", @"C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Images\Shadow.gif");
+        private Player M3 = new Player("Ben Odom", 100, 20, 5, "", @"C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Images\BenOdom.jpeg");
 
         public Game()
         {
@@ -27,49 +27,7 @@ namespace RPG
             Party.Add(M1);
             Party.Add(M2);
             Party.Add(M3);
-        }
-
-        public void GameLoop()
-        {
-
-            while (true)
-            {
-                //Application.Run(new ADGP125());
-                switch (fsm._currentState)
-                {
-                    case "init":
-                        fsm._currentState = "running";
-                        break;
-
-                    case "running":
-
-                        break;
-
-                    case "pause":
-
-                        break;
-
-                    case "battle":
-                        // Battle();
-                        // Will be ^ when done but for now: //
-                        Enemy BadGuy = new Enemy("Cactuar", 500, 10, 7, "");
-
-                        //Console.WriteLine("Your HP: " + You.HP + "                      Enemies HP: " + BadGuy.HP + "\n");
-                        //Console.WriteLine("Your Status: " + You.Status + "                      Enemies Status: " + BadGuy.Status + "\n");
-                        Console.WriteLine("A really bad guy showed up in front of you!\n" + "Choose an attack to use!\n");
-                        Console.WriteLine("1 - Attack" + "\n");
-                        Console.WriteLine("2 - Fire" + "\n");
-                        Console.WriteLine("3 - Heal" + "\n");
-                        Console.WriteLine("4 - Freeze" + "\n");
-                        Console.ReadLine();
-                        break;
-                }
-            }
-        }
-
-        void Battle()
-        {
-
+            fsm._currentState = "running";
         }
     }
 }
