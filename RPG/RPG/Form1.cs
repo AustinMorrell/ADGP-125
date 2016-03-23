@@ -16,6 +16,8 @@ namespace RPG
     public partial class ADGP125 : Form
     {
         Game game = new Game();
+        int ActiveUnit = 0;
+        Enemy BadGuy;
         public ADGP125()
         {
             InitializeComponent();
@@ -156,10 +158,123 @@ namespace RPG
 
         public void Battle()
         {
-            int ActiveUnit = 0;
-            Enemy BadGuy = new Enemy("Cactuar", 500, 10, 7, "", @"C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Images\big_cactuar.gif");
+            ActiveUnit = 0;
+            BadGuy = new Enemy("Cactuar", 500, 10, 7, "", @"C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Images\big_cactuar.gif", 2, 3, 5);
+
+            game.Party[ActiveUnit].HP = game.Party[ActiveUnit].maxHP;
+            BadGuy.HP = BadGuy.maxHP;
+            //------------------------------------------------------------------------------------------------------------------------------------//
             EnemyBox.Image = Image.FromFile(BadGuy.Image);
             PartyBox.Image = Image.FromFile(game.Party[ActiveUnit].Image);
+            NameLable.Text = game.Party[ActiveUnit].Name;
+            LevelLable.Text = "Level: " + game.Party[ActiveUnit].Level.ToString();
+            StatusLable.Text = game.Party[ActiveUnit].Status;
+            AttackLable.Text = "ATK: " + game.Party[ActiveUnit].AttackP.ToString();
+            DefenceLable.Text = "   DEF: " + game.Party[ActiveUnit].Defence.ToString();
+            EXPBar.Maximum = (int)game.Party[ActiveUnit].Curve[game.Party[ActiveUnit].Level + 1];
+            PartyHPBar.Maximum = (int)game.Party[ActiveUnit].maxHP;
+            EXPBar.Value = (int)game.Party[ActiveUnit].EXP;
+            PartyHPBar.Value = (int)game.Party[ActiveUnit].HP;
+            HPNumb.Text = "HP: " + game.Party[ActiveUnit].HP + " / " + game.Party[ActiveUnit].maxHP;
+            //------------------------------------------------------------------------------------------------------------------------------------//
+            EName.Text = BadGuy.Name;
+            ELevelLable.Text = "Level: " + BadGuy.Level.ToString();
+            EStatus.Text = BadGuy.Status;
+            EnemyHPNumb.Text = "HP: " + BadGuy.HP + " / " + BadGuy.maxHP;
+            EnemyHPBar.Maximum = (int)BadGuy.maxHP;
+            EnemyHPBar.Value = (int)BadGuy.HP;
+        }
+
+        public void ActiveBattle()
+        {
+
+        }
+
+        private void AttackO1_Click(object sender, EventArgs e)
+        {
+            switch(game.Party[ActiveUnit].Moves[0])
+            {
+                case 1:
+                    game.Party[ActiveUnit].Attack(BadGuy);
+                    break;
+
+                case 2:
+                    game.Party[ActiveUnit].Fire(BadGuy);
+                    break;
+
+                case 3:
+                    game.Party[ActiveUnit].Heal(BadGuy);
+                    break;
+
+                case 4:
+                    game.Party[ActiveUnit].Freeze(BadGuy);
+                    break;
+
+                case 5:
+                    game.Party[ActiveUnit].Poison(BadGuy);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void AttackO2_Click(object sender, EventArgs e)
+        {
+            switch (game.Party[ActiveUnit].Moves[1])
+            {
+                case 1:
+                    game.Party[ActiveUnit].Attack(BadGuy);
+                    break;
+
+                case 2:
+                    game.Party[ActiveUnit].Fire(BadGuy);
+                    break;
+
+                case 3:
+                    game.Party[ActiveUnit].Heal(BadGuy);
+                    break;
+
+                case 4:
+                    game.Party[ActiveUnit].Freeze(BadGuy);
+                    break;
+
+                case 5:
+                    game.Party[ActiveUnit].Poison(BadGuy);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void AttackO3_Click(object sender, EventArgs e)
+        {
+            switch (game.Party[ActiveUnit].Moves[2])
+            {
+                case 1:
+                    game.Party[ActiveUnit].Attack(BadGuy);
+                    break;
+
+                case 2:
+                    game.Party[ActiveUnit].Fire(BadGuy);
+                    break;
+
+                case 3:
+                    game.Party[ActiveUnit].Heal(BadGuy);
+                    break;
+
+                case 4:
+                    game.Party[ActiveUnit].Freeze(BadGuy);
+                    break;
+
+                case 5:
+                    game.Party[ActiveUnit].Poison(BadGuy);
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }

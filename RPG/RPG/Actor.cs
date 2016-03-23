@@ -18,6 +18,20 @@ namespace Combat_Program
         protected float m_Defence;
         protected string m_Status;
         protected string m_Image;
+        protected List<int> m_Moves = new List<int>();
+
+        public List<int> Moves
+        {
+            get
+            {
+                return m_Moves;
+            }
+
+            set
+            {
+                m_Moves = value;
+            }
+        }
 
         public float AttackP
         {
@@ -112,7 +126,7 @@ namespace Combat_Program
             }
         }
 
-        public void Heal()
+        public void Heal(Actor other)
         {
             m_HP += 20;
         }

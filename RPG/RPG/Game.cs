@@ -14,9 +14,9 @@ namespace RPG
     {
         public FSM fsm = new FSM(FSM.MyState.init.ToString());
         public List<Player> Party = new List<Player>();
-        private Player M1 = new Player("Cloud", 100, 20, 5, "", @"C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Images\Cloud.gif");
-        private Player M2 = new Player("Shadow", 100, 20, 5, "", @"C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Images\Shadow.gif");
-        private Player M3 = new Player("Ben Odom", 100, 20, 5, "", @"C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Images\BenOdom.jpeg");
+        private Player M1 = new Player("Cloud", 100, 20, 5, "", @"C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Images\Cloud.gif", 1, 2, 3);
+        private Player M2 = new Player("Shadow", 100, 20, 5, "", @"C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Images\Shadow.gif", 1, 4, 3);
+        private Player M3 = new Player("Ben Odom", 100, 20, 5, "", @"C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Images\BenOdom.jpeg", 1, 3, 5);
 
         public Game()
         {

@@ -11,6 +11,19 @@ namespace Combat_Program
     {
         public int EXPDrop = 0;
 
+        public string Name
+        {
+            get
+            {
+                return m_Name;
+            }
+
+            set
+            {
+                m_Name = value;
+            }
+        }
+
         public string Image
         {
             get
@@ -24,7 +37,20 @@ namespace Combat_Program
             }
         }
 
-        public Enemy(string e, float a, float b, float c, string d, string f)
+        public int Level
+        {
+            get
+            {
+                return m_Level;
+            }
+
+            set
+            {
+                m_Level = value;
+            }
+        }
+
+        public Enemy(string e, float a, float b, float c, string d, string f, int g, int h, int i)
         {
             RPG.Simi_Random rnd = new RPG.Simi_Random();
             int Roll = rnd.rNum() + 20;
@@ -36,6 +62,9 @@ namespace Combat_Program
             m_Level = Roll;
             EXPDrop = m_Level * (int)Math.Pow((m_Level / 5), 2);
             m_Image = f;
+            Moves.Add(g);
+            Moves.Add(h);
+            Moves.Add(i);
         }
     }
 }

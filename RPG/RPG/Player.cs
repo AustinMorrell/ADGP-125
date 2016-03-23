@@ -143,7 +143,7 @@ namespace Combat_Program
             }
         }
 
-        public Player(string e, float a, float b, float c, string d, string f)
+        public Player(string e, float a, float b, float c, string d, string f, int g, int h, int i)
         {
             m_Name = e;
             m_maxHP = a;
@@ -152,6 +152,10 @@ namespace Combat_Program
             m_Status = d;
             m_Level = 1;
             m_Image = f;
+            LevelCurve();
+            Moves.Add(g);
+            Moves.Add(h);
+            Moves.Add(i);
         }
 
         public Player()

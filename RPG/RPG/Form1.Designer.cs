@@ -50,6 +50,9 @@
             this.AttackLable = new System.Windows.Forms.Label();
             this.DefenceLable = new System.Windows.Forms.Label();
             this.Pause = new System.Windows.Forms.Button();
+            this.AttackO1 = new System.Windows.Forms.Button();
+            this.AttackO3 = new System.Windows.Forms.Button();
+            this.AttackO2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PartyBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EnemyBox)).BeginInit();
             this.SuspendLayout();
@@ -257,9 +260,42 @@
             this.Pause.UseVisualStyleBackColor = true;
             this.Pause.Click += new System.EventHandler(this.Pause_Click);
             // 
+            // AttackO1
+            // 
+            this.AttackO1.Location = new System.Drawing.Point(106, 348);
+            this.AttackO1.Name = "AttackO1";
+            this.AttackO1.Size = new System.Drawing.Size(75, 23);
+            this.AttackO1.TabIndex = 21;
+            this.AttackO1.Text = "AttackO1";
+            this.AttackO1.UseVisualStyleBackColor = true;
+            this.AttackO1.Click += new System.EventHandler(this.AttackO1_Click);
+            // 
+            // AttackO3
+            // 
+            this.AttackO3.Location = new System.Drawing.Point(106, 406);
+            this.AttackO3.Name = "AttackO3";
+            this.AttackO3.Size = new System.Drawing.Size(75, 23);
+            this.AttackO3.TabIndex = 22;
+            this.AttackO3.Text = "AttackO3";
+            this.AttackO3.UseVisualStyleBackColor = true;
+            this.AttackO3.Click += new System.EventHandler(this.AttackO3_Click);
+            // 
+            // AttackO2
+            // 
+            this.AttackO2.Location = new System.Drawing.Point(106, 377);
+            this.AttackO2.Name = "AttackO2";
+            this.AttackO2.Size = new System.Drawing.Size(75, 23);
+            this.AttackO2.TabIndex = 23;
+            this.AttackO2.Text = "AttackO2";
+            this.AttackO2.UseVisualStyleBackColor = true;
+            this.AttackO2.Click += new System.EventHandler(this.AttackO2_Click);
+            // 
             // ADGP125
             // 
             this.ClientSize = new System.Drawing.Size(1040, 545);
+            this.Controls.Add(this.AttackO2);
+            this.Controls.Add(this.AttackO3);
+            this.Controls.Add(this.AttackO1);
             this.Controls.Add(this.Pause);
             this.Controls.Add(this.DefenceLable);
             this.Controls.Add(this.AttackLable);
@@ -320,6 +356,9 @@
         private System.Windows.Forms.Label AttackLable;
         private System.Windows.Forms.Label DefenceLable;
         private System.Windows.Forms.Button Pause;
+        private System.Windows.Forms.Button AttackO1;
+        private System.Windows.Forms.Button AttackO3;
+        private System.Windows.Forms.Button AttackO2;
     }
 }
 

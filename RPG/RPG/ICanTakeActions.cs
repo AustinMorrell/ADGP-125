@@ -11,7 +11,7 @@ namespace Combat_Program
     {
         void Attack(Actor other);
         void Fire(Actor other);
-        void Heal();
+        void Heal(Actor other);
         void Freeze(Actor other);
         void Poison(Actor other);
 
