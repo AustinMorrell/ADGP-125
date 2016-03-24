@@ -18,9 +18,14 @@ namespace RPG
         Game game = new Game();
         int ActiveUnit = 0;
         Enemy BadGuy;
+        List<Button> MoveButtons = new List<Button>();
+
         public ADGP125()
         {
             InitializeComponent();
+            MoveButtons.Add(AttackO1);
+            MoveButtons.Add(AttackO2);
+            MoveButtons.Add(AttackO3);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,6 +74,13 @@ namespace RPG
             }
         }
 
+        private void RunAway()
+        {
+            EnemyBox.Image = null;
+            PartyBox.Image = null;
+            game.fsm.ChangeState("Running");
+        }
+
         private void PartyBox_Click(object sender, EventArgs e)
         {
 
@@ -91,9 +103,7 @@ namespace RPG
 
         private void Run_Click(object sender, EventArgs e)
         {
-            EnemyBox.Image = null;
-            PartyBox.Image = null;
-            game.fsm.ChangeState("Running");
+            RunAway();
         }
 
         private void Pause_Click(object sender, EventArgs e)
@@ -160,9 +170,31 @@ namespace RPG
         {
             ActiveUnit = 0;
             BadGuy = new Enemy("Cactuar", 500, 10, 7, "", @"C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Images\big_cactuar.gif", 2, 3, 5);
-
-            game.Party[ActiveUnit].HP = game.Party[ActiveUnit].maxHP;
+            foreach (Player j in game.Party)
+            {
+                j.HP = j.maxHP;
+            }
             BadGuy.HP = BadGuy.maxHP;
+            ActiveBattle();
+        }
+
+        public void ActiveBattle()
+        {
+            if(BadGuy.HP <= 0)
+            {
+                game.Party[ActiveUnit].EXP += BadGuy.EXPDrop;
+                if(game.Party[ActiveUnit].EXP > game.Party[ActiveUnit].Curve[game.Party[ActiveUnit].Level])
+                {
+                    game.Party[ActiveUnit].LevelUp();
+                }
+                game.fsm.ChangeState("Running");
+                RunAway();
+            }
+
+            if (ActiveUnit >= game.Party.Count)
+            {
+                ActiveUnit = 0;
+            }
             //------------------------------------------------------------------------------------------------------------------------------------//
             EnemyBox.Image = Image.FromFile(BadGuy.Image);
             PartyBox.Image = Image.FromFile(game.Party[ActiveUnit].Image);
@@ -183,11 +215,11 @@ namespace RPG
             EnemyHPNumb.Text = "HP: " + BadGuy.HP + " / " + BadGuy.maxHP;
             EnemyHPBar.Maximum = (int)BadGuy.maxHP;
             EnemyHPBar.Value = (int)BadGuy.HP;
-        }
-
-        public void ActiveBattle()
-        {
-
+            //------------------------------------------------------------------------------------------------------------------------------------//
+            for(int i = 0; i < 3; i++)
+            {
+                AttackNames(i);
+            }
         }
 
         private void AttackO1_Click(object sender, EventArgs e)
@@ -196,25 +228,37 @@ namespace RPG
             {
                 case 1:
                     game.Party[ActiveUnit].Attack(BadGuy);
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
 
                 case 2:
                     game.Party[ActiveUnit].Fire(BadGuy);
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
 
                 case 3:
                     game.Party[ActiveUnit].Heal(BadGuy);
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
 
                 case 4:
                     game.Party[ActiveUnit].Freeze(BadGuy);
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
 
                 case 5:
                     game.Party[ActiveUnit].Poison(BadGuy);
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
 
                 default:
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
             }
         }
@@ -225,25 +269,37 @@ namespace RPG
             {
                 case 1:
                     game.Party[ActiveUnit].Attack(BadGuy);
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
 
                 case 2:
                     game.Party[ActiveUnit].Fire(BadGuy);
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
 
                 case 3:
                     game.Party[ActiveUnit].Heal(BadGuy);
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
 
                 case 4:
                     game.Party[ActiveUnit].Freeze(BadGuy);
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
 
                 case 5:
                     game.Party[ActiveUnit].Poison(BadGuy);
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
 
                 default:
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
             }
         }
@@ -254,25 +310,67 @@ namespace RPG
             {
                 case 1:
                     game.Party[ActiveUnit].Attack(BadGuy);
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
 
                 case 2:
                     game.Party[ActiveUnit].Fire(BadGuy);
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
 
                 case 3:
                     game.Party[ActiveUnit].Heal(BadGuy);
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
 
                 case 4:
                     game.Party[ActiveUnit].Freeze(BadGuy);
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
 
                 case 5:
                     game.Party[ActiveUnit].Poison(BadGuy);
+                    ActiveUnit += 1;
+                    ActiveBattle();
                     break;
 
                 default:
+                    ActiveUnit += 1;
+                    ActiveBattle();
+                    break;
+            }
+        }
+
+        private void AttackNames(int i)
+        {
+            switch (game.Party[ActiveUnit].Moves[i])
+            {
+                case 1:
+                    MoveButtons[i].Text = "Attack";
+                    break;
+
+                case 2:
+                    MoveButtons[i].Text = "Fire";
+                    break;
+
+                case 3:
+                    MoveButtons[i].Text = "Heal";
+                    break;
+
+                case 4:
+                    MoveButtons[i].Text = "Freeze";
+                    break;
+
+                case 5:
+                    MoveButtons[i].Text = "Poison";
+                    break;
+
+                default:
+                    MoveButtons[i].Text = "";
                     break;
             }
         }
