@@ -129,6 +129,10 @@ namespace Combat_Program
         public void Heal(Actor other)
         {
             m_HP += 20;
+            if (m_HP > m_maxHP)
+            {
+                m_HP = m_maxHP;
+            }
         }
 
         public void Freeze(Actor other)

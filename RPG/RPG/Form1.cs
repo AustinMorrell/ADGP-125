@@ -224,125 +224,189 @@ namespace RPG
 
         private void AttackO1_Click(object sender, EventArgs e)
         {
-            switch(game.Party[ActiveUnit].Moves[0])
+            if (game.fsm._currentState == "battle")
             {
-                case 1:
-                    game.Party[ActiveUnit].Attack(BadGuy);
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                switch (game.Party[ActiveUnit].Moves[0])
+                {
+                    case 1:
+                        game.Party[ActiveUnit].Attack(BadGuy);
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
 
-                case 2:
-                    game.Party[ActiveUnit].Fire(BadGuy);
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                    case 2:
+                        game.Party[ActiveUnit].Fire(BadGuy);
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
 
-                case 3:
-                    game.Party[ActiveUnit].Heal(BadGuy);
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                    case 3:
+                        game.Party[ActiveUnit].Heal(BadGuy);
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
 
-                case 4:
-                    game.Party[ActiveUnit].Freeze(BadGuy);
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                    case 4:
+                        game.Party[ActiveUnit].Freeze(BadGuy);
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
 
-                case 5:
-                    game.Party[ActiveUnit].Poison(BadGuy);
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                    case 5:
+                        game.Party[ActiveUnit].Poison(BadGuy);
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
 
-                default:
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                    default:
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
+                }
             }
         }
 
         private void AttackO2_Click(object sender, EventArgs e)
         {
-            switch (game.Party[ActiveUnit].Moves[1])
+            if (game.fsm._currentState == "battle")
             {
-                case 1:
-                    game.Party[ActiveUnit].Attack(BadGuy);
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                switch (game.Party[ActiveUnit].Moves[1])
+                {
+                    case 1:
+                        game.Party[ActiveUnit].Attack(BadGuy);
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
 
-                case 2:
-                    game.Party[ActiveUnit].Fire(BadGuy);
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                    case 2:
+                        game.Party[ActiveUnit].Fire(BadGuy);
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
 
-                case 3:
-                    game.Party[ActiveUnit].Heal(BadGuy);
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                    case 3:
+                        game.Party[ActiveUnit].Heal(BadGuy);
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
 
-                case 4:
-                    game.Party[ActiveUnit].Freeze(BadGuy);
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                    case 4:
+                        game.Party[ActiveUnit].Freeze(BadGuy);
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
 
-                case 5:
-                    game.Party[ActiveUnit].Poison(BadGuy);
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                    case 5:
+                        game.Party[ActiveUnit].Poison(BadGuy);
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
 
-                default:
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                    default:
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
+                }
             }
         }
 
         private void AttackO3_Click(object sender, EventArgs e)
         {
-            switch (game.Party[ActiveUnit].Moves[2])
+            if (game.fsm._currentState == "battle")
             {
-                case 1:
-                    game.Party[ActiveUnit].Attack(BadGuy);
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                switch (game.Party[ActiveUnit].Moves[2])
+                {
+                    case 1:
+                        game.Party[ActiveUnit].Attack(BadGuy);
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
 
-                case 2:
-                    game.Party[ActiveUnit].Fire(BadGuy);
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                    case 2:
+                        game.Party[ActiveUnit].Fire(BadGuy);
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
 
-                case 3:
-                    game.Party[ActiveUnit].Heal(BadGuy);
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                    case 3:
+                        game.Party[ActiveUnit].Heal(BadGuy);
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
 
-                case 4:
-                    game.Party[ActiveUnit].Freeze(BadGuy);
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                    case 4:
+                        game.Party[ActiveUnit].Freeze(BadGuy);
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
 
-                case 5:
-                    game.Party[ActiveUnit].Poison(BadGuy);
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                    case 5:
+                        game.Party[ActiveUnit].Poison(BadGuy);
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
 
-                default:
-                    ActiveUnit += 1;
-                    ActiveBattle();
-                    break;
+                    default:
+                        ActiveUnit += 1;
+                        EnemyAttack();
+                        ActiveBattle();
+                        break;
+                }
             }
+        }
+
+        private bool EnemyAttack()
+        {
+            if (ActiveUnit == game.Party.Count)
+            {
+                Random rnd1 = new Random();
+                Random rnd2 = new Random();
+                int target = rnd1.Next(0, game.Party.Count);
+                int move = rnd2.Next(0, BadGuy.Moves.Count);
+                switch (move)
+                {
+                    case 1:
+                        BadGuy.Attack(game.Party[target]);
+                        return true;
+
+                    case 2:
+                        BadGuy.Fire(game.Party[target]);
+                        return true;
+
+                    case 3:
+                        BadGuy.Heal(game.Party[target]);
+                        return true;
+
+                    case 4:
+                        BadGuy.Freeze(game.Party[target]);
+                        return true;
+
+                    case 5:
+                        BadGuy.Poison(game.Party[target]);
+                        return true;
+
+                    default:
+                        break;
+                }
+            }
+            return true;
         }
 
         private void AttackNames(int i)
