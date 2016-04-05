@@ -188,7 +188,18 @@ namespace RPG
                     game.Party[ActiveUnit].LevelUp();
                 }
                 game.fsm.ChangeState("Running");
+                BattleBox.Text = "You Win!";
                 RunAway();
+            }
+
+            if (ActiveUnit >= game.Party.Count)
+            {
+                ActiveUnit = 0;
+            }
+
+            if (game.Party[ActiveUnit].HP <= 0)
+            {
+                ActiveUnit += 1;
             }
 
             if (ActiveUnit >= game.Party.Count)
@@ -214,6 +225,10 @@ namespace RPG
             EStatus.Text = BadGuy.Status;
             EnemyHPNumb.Text = "HP: " + BadGuy.HP + " / " + BadGuy.maxHP;
             EnemyHPBar.Maximum = (int)BadGuy.maxHP;
+            if (BadGuy.HP <= 0)
+            {
+                BadGuy.HP = 0;
+            }
             EnemyHPBar.Value = (int)BadGuy.HP;
             //------------------------------------------------------------------------------------------------------------------------------------//
             for(int i = 0; i < 3; i++)
