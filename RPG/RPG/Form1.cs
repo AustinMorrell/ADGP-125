@@ -78,6 +78,10 @@ namespace RPG
         {
             EnemyBox.Image = null;
             PartyBox.Image = null;
+            BattleBox.Text = null;
+            AttackO1.Text = null;
+            AttackO2.Text = null;
+            AttackO3.Text = null;
             game.fsm.ChangeState("Running");
         }
 
@@ -188,7 +192,7 @@ namespace RPG
                     game.Party[ActiveUnit].LevelUp();
                 }
                 game.fsm.ChangeState("Running");
-                BattleBox.Text = "You Win!";
+                BattleBox.Text += "You Win!\n";
                 RunAway();
             }
 
@@ -231,7 +235,7 @@ namespace RPG
             }
             EnemyHPBar.Value = (int)BadGuy.HP;
             //------------------------------------------------------------------------------------------------------------------------------------//
-            for(int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 AttackNames(i);
             }
@@ -245,6 +249,7 @@ namespace RPG
                 {
                     case 1:
                         game.Party[ActiveUnit].Attack(BadGuy);
+                        BattleBox.Text += game.Party[ActiveUnit].Name + " used Attack.\n";
                         ActiveUnit += 1;
                         EnemyAttack();
                         ActiveBattle();
@@ -252,6 +257,7 @@ namespace RPG
 
                     case 2:
                         game.Party[ActiveUnit].Fire(BadGuy);
+                        BattleBox.Text += game.Party[ActiveUnit].Name + " used Fire.\n";
                         ActiveUnit += 1;
                         EnemyAttack();
                         ActiveBattle();
@@ -259,6 +265,7 @@ namespace RPG
 
                     case 3:
                         game.Party[ActiveUnit].Heal(BadGuy);
+                        BattleBox.Text += game.Party[ActiveUnit].Name + " used Heal.\n";
                         ActiveUnit += 1;
                         EnemyAttack();
                         ActiveBattle();
@@ -266,6 +273,7 @@ namespace RPG
 
                     case 4:
                         game.Party[ActiveUnit].Freeze(BadGuy);
+                        BattleBox.Text += game.Party[ActiveUnit].Name + " used Freeze.\n";
                         ActiveUnit += 1;
                         EnemyAttack();
                         ActiveBattle();
@@ -273,6 +281,7 @@ namespace RPG
 
                     case 5:
                         game.Party[ActiveUnit].Poison(BadGuy);
+                        BattleBox.Text += game.Party[ActiveUnit].Name + " used Poison.\n";
                         ActiveUnit += 1;
                         EnemyAttack();
                         ActiveBattle();
@@ -295,6 +304,7 @@ namespace RPG
                 {
                     case 1:
                         game.Party[ActiveUnit].Attack(BadGuy);
+                        BattleBox.Text += game.Party[ActiveUnit].Name + " used Attack.\n";
                         ActiveUnit += 1;
                         EnemyAttack();
                         ActiveBattle();
@@ -302,6 +312,7 @@ namespace RPG
 
                     case 2:
                         game.Party[ActiveUnit].Fire(BadGuy);
+                        BattleBox.Text += game.Party[ActiveUnit].Name + " used Fire.\n";
                         ActiveUnit += 1;
                         EnemyAttack();
                         ActiveBattle();
@@ -309,6 +320,7 @@ namespace RPG
 
                     case 3:
                         game.Party[ActiveUnit].Heal(BadGuy);
+                        BattleBox.Text += game.Party[ActiveUnit].Name + " used Heal.\n";
                         ActiveUnit += 1;
                         EnemyAttack();
                         ActiveBattle();
@@ -316,6 +328,7 @@ namespace RPG
 
                     case 4:
                         game.Party[ActiveUnit].Freeze(BadGuy);
+                        BattleBox.Text += game.Party[ActiveUnit].Name + " used Freeze.\n";
                         ActiveUnit += 1;
                         EnemyAttack();
                         ActiveBattle();
@@ -323,6 +336,7 @@ namespace RPG
 
                     case 5:
                         game.Party[ActiveUnit].Poison(BadGuy);
+                        BattleBox.Text += game.Party[ActiveUnit].Name + " used Poison.\n";
                         ActiveUnit += 1;
                         EnemyAttack();
                         ActiveBattle();
@@ -345,6 +359,7 @@ namespace RPG
                 {
                     case 1:
                         game.Party[ActiveUnit].Attack(BadGuy);
+                        BattleBox.Text += game.Party[ActiveUnit].Name + " used Attack.\n";
                         ActiveUnit += 1;
                         EnemyAttack();
                         ActiveBattle();
@@ -352,6 +367,7 @@ namespace RPG
 
                     case 2:
                         game.Party[ActiveUnit].Fire(BadGuy);
+                        BattleBox.Text += game.Party[ActiveUnit].Name + " used Fire.\n";
                         ActiveUnit += 1;
                         EnemyAttack();
                         ActiveBattle();
@@ -359,6 +375,7 @@ namespace RPG
 
                     case 3:
                         game.Party[ActiveUnit].Heal(BadGuy);
+                        BattleBox.Text += game.Party[ActiveUnit].Name + " used Heal.\n";
                         ActiveUnit += 1;
                         EnemyAttack();
                         ActiveBattle();
@@ -366,6 +383,7 @@ namespace RPG
 
                     case 4:
                         game.Party[ActiveUnit].Freeze(BadGuy);
+                        BattleBox.Text += game.Party[ActiveUnit].Name + " used Freeze.\n";
                         ActiveUnit += 1;
                         EnemyAttack();
                         ActiveBattle();
@@ -373,6 +391,7 @@ namespace RPG
 
                     case 5:
                         game.Party[ActiveUnit].Poison(BadGuy);
+                        BattleBox.Text += game.Party[ActiveUnit].Name + " used Poison.\n";
                         ActiveUnit += 1;
                         EnemyAttack();
                         ActiveBattle();
@@ -399,22 +418,27 @@ namespace RPG
                 {
                     case 1:
                         BadGuy.Attack(game.Party[target]);
+                        BattleBox.Text += BadGuy.Name + " used Attack.\n";
                         return true;
 
                     case 2:
                         BadGuy.Fire(game.Party[target]);
+                        BattleBox.Text += BadGuy.Name + " used Fire.\n";
                         return true;
 
                     case 3:
                         BadGuy.Heal(game.Party[target]);
+                        BattleBox.Text += BadGuy.Name + " used Heal.\n";
                         return true;
 
                     case 4:
                         BadGuy.Freeze(game.Party[target]);
+                        BattleBox.Text += BadGuy.Name + " used Freeze.\n";
                         return true;
 
                     case 5:
                         BadGuy.Poison(game.Party[target]);
+                        BattleBox.Text += BadGuy.Name + " used Poison.\n";
                         return true;
 
                     default:
