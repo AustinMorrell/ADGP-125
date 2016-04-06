@@ -38,7 +38,7 @@ namespace RPG
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
-            
+            //Environment.CurrentDirectory + @"\Images\"
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -169,7 +169,7 @@ namespace RPG
         public void Battle()
         {
             ActiveUnit = 0;
-            BadGuy = new Enemy("Cactuar", 500, 10, 7, "", @"C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\bin\Images\big_cactuar.gif", 2, 3, 5);
+            BadGuy = new Enemy("Cactuar", 500, 10, 7, "", Environment.CurrentDirectory + @"\Images\big_cactuar.gif", 2, 3, 5);
             foreach (Player j in game.Party)
             {
                 j.HP = j.maxHP;
