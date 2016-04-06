@@ -19,6 +19,8 @@ namespace RPG
         int ActiveUnit = 0;
         Enemy BadGuy;
         List<Button> MoveButtons = new List<Button>();
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+        bool IsPlaying = true;
 
         public ADGP125()
         {
@@ -26,6 +28,7 @@ namespace RPG
             MoveButtons.Add(AttackO1);
             MoveButtons.Add(AttackO2);
             MoveButtons.Add(AttackO3);
+            playSound(Environment.CurrentDirectory + "\\LWD.wav");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -82,7 +85,15 @@ namespace RPG
             AttackO1.Text = null;
             AttackO2.Text = null;
             AttackO3.Text = null;
+            EnemyHPBar.Value = 0;
+            PartyHPBar.Value = 0;
             game.fsm.ChangeState("Running");
+        }
+
+        private void playSound(string path)
+        {
+            player.SoundLocation = path;
+            player.PlayLooping();
         }
 
         private void PartyBox_Click(object sender, EventArgs e)
@@ -184,18 +195,6 @@ namespace RPG
 
         public void ActiveBattle()
         {
-            if(BadGuy.HP <= 0)
-            {
-                game.Party[ActiveUnit].EXP += BadGuy.EXPDrop;
-                if(game.Party[ActiveUnit].EXP > game.Party[ActiveUnit].Curve[game.Party[ActiveUnit].Level])
-                {
-                    game.Party[ActiveUnit].LevelUp();
-                }
-                game.fsm.ChangeState("Running");
-                BattleBox.Text += "You Win!\n";
-                RunAway();
-            }
-
             if (ActiveUnit >= game.Party.Count)
             {
                 ActiveUnit = 0;
@@ -209,6 +208,18 @@ namespace RPG
             if (ActiveUnit >= game.Party.Count)
             {
                 ActiveUnit = 0;
+            }
+
+            if (BadGuy.HP <= 0)
+            {
+                game.Party[ActiveUnit].EXP += BadGuy.EXPDrop;
+                if (game.Party[ActiveUnit].EXP > game.Party[ActiveUnit].Curve[game.Party[ActiveUnit].Level])
+                {
+                    game.Party[ActiveUnit].LevelUp();
+                }
+                game.fsm.ChangeState("Running");
+                BattleBox.Text += "You Win!\n";
+                RunAway();
             }
             //------------------------------------------------------------------------------------------------------------------------------------//
             EnemyBox.Image = Image.FromFile(BadGuy.Image);
@@ -475,6 +486,20 @@ namespace RPG
                 default:
                     MoveButtons[i].Text = "";
                     break;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (IsPlaying)
+            {
+                IsPlaying = false;
+                player.Stop();
+            }
+            else
+            {
+                player.PlayLooping();
+                IsPlaying = true;
             }
         }
     }

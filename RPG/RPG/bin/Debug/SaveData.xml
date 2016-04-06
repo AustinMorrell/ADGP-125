@@ -126,13 +126,13 @@
       <int>3</int>
     </Moves>
     <AttackP>20</AttackP>
-    <HP>57</HP>
+    <HP>87</HP>
     <Defence>5</Defence>
     <Status />
     <maxHP>100</maxHP>
     <Name>Shadow</Name>
-    <EXP>0</EXP>
-    <Level>1</Level>
+    <EXP>384</EXP>
+    <Level>19</Level>
     <Curve>
       <double>1</double>
       <double>4</double>
@@ -245,13 +245,13 @@
       <int>5</int>
     </Moves>
     <AttackP>20</AttackP>
-    <HP>82</HP>
+    <HP>64</HP>
     <Defence>5</Defence>
     <Status />
     <maxHP>100</maxHP>
     <Name>Sora</Name>
-    <EXP>384</EXP>
-    <Level>19</Level>
+    <EXP>0</EXP>
+    <Level>1</Level>
     <Curve>
       <double>1</double>
       <double>4</double>

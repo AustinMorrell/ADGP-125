@@ -53,8 +53,11 @@
             this.AttackO1 = new System.Windows.Forms.Button();
             this.AttackO3 = new System.Windows.Forms.Button();
             this.AttackO2 = new System.Windows.Forms.Button();
+            this.Background = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PartyBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EnemyBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -98,6 +101,7 @@
             // 
             // PartyBox
             // 
+            this.PartyBox.BackColor = System.Drawing.Color.Transparent;
             this.PartyBox.Location = new System.Drawing.Point(13, 13);
             this.PartyBox.Name = "PartyBox";
             this.PartyBox.Size = new System.Drawing.Size(304, 250);
@@ -108,6 +112,7 @@
             // 
             // EnemyBox
             // 
+            this.EnemyBox.BackColor = System.Drawing.Color.Transparent;
             this.EnemyBox.Location = new System.Drawing.Point(629, 12);
             this.EnemyBox.Name = "EnemyBox";
             this.EnemyBox.Size = new System.Drawing.Size(273, 251);
@@ -290,9 +295,30 @@
             this.AttackO2.UseVisualStyleBackColor = true;
             this.AttackO2.Click += new System.EventHandler(this.AttackO2_Click);
             // 
+            // Background
+            // 
+            this.Background.Image = ((System.Drawing.Image)(resources.GetObject("Background.Image")));
+            this.Background.Location = new System.Drawing.Point(0, 0);
+            this.Background.Name = "Background";
+            this.Background.Size = new System.Drawing.Size(913, 264);
+            this.Background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Background.TabIndex = 24;
+            this.Background.TabStop = false;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(943, 510);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(85, 23);
+            this.button4.TabIndex = 25;
+            this.button4.Text = "Music On \\ Off";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // ADGP125
             // 
             this.ClientSize = new System.Drawing.Size(1040, 545);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.AttackO2);
             this.Controls.Add(this.AttackO3);
             this.Controls.Add(this.AttackO1);
@@ -317,11 +343,13 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.BattleBox);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.Background);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ADGP125";
             this.Text = "ADGP125";
             ((System.ComponentModel.ISupportInitialize)(this.PartyBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EnemyBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Background)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,6 +387,8 @@
         private System.Windows.Forms.Button AttackO1;
         private System.Windows.Forms.Button AttackO3;
         private System.Windows.Forms.Button AttackO2;
+        private System.Windows.Forms.PictureBox Background;
+        private System.Windows.Forms.Button button4;
     }
 }
 
