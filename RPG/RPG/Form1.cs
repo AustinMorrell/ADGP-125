@@ -46,7 +46,7 @@ namespace RPG
             if (game.fsm._currentState == "pause")
             {
                 // I make the path to the file.
-                var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\SaveData.xml";
+                var path = Environment.CurrentDirectory + "\\SaveData.xml";
                 // Make the file.
                 System.IO.FileStream file = System.IO.File.Create(path);
                 // Write to the file.
@@ -62,7 +62,7 @@ namespace RPG
             if (game.fsm._currentState == "pause")
             {
                 // I make the path to the file.
-                var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\SaveData.xml";
+                var path = Environment.CurrentDirectory + "\\SaveData.xml";
                 // Make the deserializer.
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Player>));
                 // Make the reader for the file.
