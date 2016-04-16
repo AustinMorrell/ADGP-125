@@ -8,3 +8,12 @@ C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\obj\Debug\RPG.csproj.GenerateRe
 C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\obj\Debug\RPG.exe
 C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\obj\Debug\RPG.pdb
 C:\Users\Austin.Morrell\Desktop\ADGP 125\RPG\RPG\obj\Debug\RPG.ADGP125.resources
+C:\Users\austi_000\Desktop\ADGP-125\RPG\RPG\bin\Debug\RPG.exe.config
+C:\Users\austi_000\Desktop\ADGP-125\RPG\RPG\obj\Debug\RPG.exe
+C:\Users\austi_000\Desktop\ADGP-125\RPG\RPG\obj\Debug\RPG.pdb
+C:\Users\austi_000\Desktop\ADGP-125\RPG\RPG\bin\Debug\RPG.exe
+C:\Users\austi_000\Desktop\ADGP-125\RPG\RPG\bin\Debug\RPG.pdb
+C:\Users\austi_000\Desktop\ADGP-125\RPG\RPG\obj\Debug\RPG.csprojResolveAssemblyReference.cache
+C:\Users\austi_000\Desktop\ADGP-125\RPG\RPG\obj\Debug\RPG.ADGP125.resources
+C:\Users\austi_000\Desktop\ADGP-125\RPG\RPG\obj\Debug\RPG.Properties.Resources.resources
+C:\Users\austi_000\Desktop\ADGP-125\RPG\RPG\obj\Debug\RPG.csproj.GenerateResource.Cache
