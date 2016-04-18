@@ -33,10 +33,7 @@ namespace RPG
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (game.fsm.ChangeState("Battle"))
-            {
                 Battle();
-            }
         }
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)
@@ -46,8 +43,6 @@ namespace RPG
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (game.fsm._currentState == "pause")
-            {
                 // I make the path to the file.
                 var path = Environment.CurrentDirectory + "\\SaveData.xml";
                 // Make the file.
@@ -57,13 +52,10 @@ namespace RPG
                 writer.Serialize(file, game.Party);
                 // And then close the file.
                 file.Close();
-            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (game.fsm._currentState == "pause")
-            {
                 // I make the path to the file.
                 var path = Environment.CurrentDirectory + "\\SaveData.xml";
                 // Make the deserializer.
@@ -74,7 +66,6 @@ namespace RPG
                 game.Party = (List<Player>)serializer.Deserialize(reader);
                 // Close the reader.
                 reader.Close();
-            }
         }
 
         private void RunAway()
@@ -87,7 +78,6 @@ namespace RPG
             AttackO3.Text = null;
             EnemyHPBar.Value = 0;
             PartyHPBar.Value = 0;
-            game.fsm.ChangeState("Running");
         }
 
         private void playSound(string path)
@@ -123,7 +113,7 @@ namespace RPG
 
         private void Pause_Click(object sender, EventArgs e)
         {
-            game.fsm.ChangeState("Pause");
+            
         }
 
         private void EXPBar_Click(object sender, EventArgs e)
@@ -217,9 +207,6 @@ namespace RPG
                 {
                     game.Party[ActiveUnit].LevelUp();
                 }
-                game.fsm.ChangeState("Running");
-                BattleBox.Text += "You Win!\n";
-                RunAway();
             }
             //------------------------------------------------------------------------------------------------------------------------------------//
             EnemyBox.Image = Image.FromFile(BadGuy.Image);
@@ -250,12 +237,15 @@ namespace RPG
             {
                 AttackNames(i);
             }
+            if (BadGuy.HP <= 0)
+            {
+                RunAway();
+                BattleBox.Text += "You Win!\n";
+            }
         }
 
         private void AttackO1_Click(object sender, EventArgs e)
         {
-            if (game.fsm._currentState == "battle")
-            {
                 switch (game.Party[ActiveUnit].Moves[0])
                 {
                     case 1:
@@ -303,14 +293,11 @@ namespace RPG
                         EnemyAttack();
                         ActiveBattle();
                         break;
-                }
             }
         }
 
         private void AttackO2_Click(object sender, EventArgs e)
         {
-            if (game.fsm._currentState == "battle")
-            {
                 switch (game.Party[ActiveUnit].Moves[1])
                 {
                     case 1:
@@ -358,14 +345,11 @@ namespace RPG
                         EnemyAttack();
                         ActiveBattle();
                         break;
-                }
             }
         }
 
         private void AttackO3_Click(object sender, EventArgs e)
         {
-            if (game.fsm._currentState == "battle")
-            {
                 switch (game.Party[ActiveUnit].Moves[2])
                 {
                     case 1:
@@ -413,7 +397,6 @@ namespace RPG
                         EnemyAttack();
                         ActiveBattle();
                         break;
-                }
             }
         }
 
